@@ -1,0 +1,31 @@
+.tarif-card {
+    width: 200px;
+    background-color: #F8F8F8;
+
+    &:not(:last-child) {
+        margin-right: 2px;
+    }
+}
+
+.unlimited {
+    height: 50px;
+}
+
+.price {
+    height: 150px;
+}
+
+.speed{
+    height: 50px;
+}
+.volume{
+    background-color: #EEEEEE;
+    height: 50px;
+}
+.selected{
+    width: 220px;
+    
+    .price{
+        height: 160px;
+    }
+}
