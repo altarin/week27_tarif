@@ -1,5 +1,5 @@
 import React from 'react';
-import './tarifCard.scss';
+import './TarifCard.scss';
 
 import './themes/blue.scss';
 import './themes/green.scss';
@@ -30,6 +30,7 @@ class Tarif extends React.Component {
 
         let classTar = "";
         if (isSelected) classTar = "selected";
+
 
         return (
             <div className={`tarif-card ${theme} ${classTar}`}>

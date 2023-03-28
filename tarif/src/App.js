@@ -1,6 +1,6 @@
 import styles from './App.css';
 import React from 'react';
-import Tarif from './components/tarifCard';
+import Tarif from './components/TarifCard';
 
 const tars = [
   {unlimited:"300", price: "300", speed: "10", color: 'blue'},
