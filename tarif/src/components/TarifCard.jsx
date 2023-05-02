@@ -1,5 +1,8 @@
 import React from 'react';
+import Button from './Button';
 import './TarifCard.scss';
+import './Button.scss';
+
 
 import './themes/blue.scss';
 import './themes/green.scss';
@@ -31,14 +34,13 @@ class Tarif extends React.Component {
         let classTar = "";
         if (isSelected) classTar = "selected";
 
-
         return (
             <div className={`tarif-card ${theme} ${classTar}`}>
-                {/* {this.state.pressed} */}
                 <div className="unlimited">Безлимитный {unlimited}</div>
                 <div className="price">руб {price} /мес</div>
                 <div className="speed">до {speed} Мбит/сек</div>
                 <div className="volume">Объем включенного трафика не ограничен</div>
+                <Button></Button>
             </div >
         );
     }
