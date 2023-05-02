@@ -3,7 +3,6 @@ import Button from './Button';
 import './TarifCard.scss';
 import './Button.scss';
 
-
 import './themes/blue.scss';
 import './themes/green.scss';
 import './themes/red.scss';
@@ -25,6 +24,13 @@ function getThemeFile(color) {
 }
 
 class Tarif extends React.Component {
+    state = {
+        showBorder: false
+    }
+
+    handleClick = () => {
+        this.setState(prevState => ({ showBorder: !prevState.showBorder }));
+    }
 
     render() {
 
@@ -35,12 +41,12 @@ class Tarif extends React.Component {
         if (isSelected) classTar = "selected";
 
         return (
-            <div className={`tarif-card ${theme} ${classTar}`}>
+            <div className={`tarif-card ${theme} ${classTar}`} style={{ border: this.state.showBorder ? '2px solid blue' : 'none' }}>
                 <div className="unlimited">Безлимитный {unlimited}</div>
                 <div className="price">руб {price} /мес</div>
                 <div className="speed">до {speed} Мбит/сек</div>
                 <div className="volume">Объем включенного трафика не ограничен</div>
-                <Button></Button>
+                <Button isSelected={isSelected} onClick={this.handleClick}></Button>
             </div >
         );
     }

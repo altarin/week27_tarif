@@ -1,23 +1,15 @@
+import React from 'react';
 import './Button.scss';
-// import Tarif from './TarifCard';
-
-
-import React, { useState } from 'react';
 
 export default function Button(props) {
-    const [pressed, setPressed] = useState(false);
-    const [showBorder, setShowBorder] = useState(false);
+    const [isSelected, setIsSelected] = React.useState(false);
 
-    const handleChange = () => {
-        setPressed(!pressed);
-        setShowBorder(true);
+    const handleClick = () => {
+        setIsSelected(!isSelected);
+        props.onClick();
     };
 
     return (
-        <div className={`card ${setShowBorder ? 'tarif-card' : ""} `}>
-            <button onClick={handleChange}>Выбрать</button>
-        </div >
+        <button onClick={handleClick}>{isSelected ? 'Выбран' : 'Выбрать'}</button>
     );
-
 }
-// style = {{ borderColor: pressed ? "red" : "blue" }}
